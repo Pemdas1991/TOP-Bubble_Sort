@@ -1,28 +1,21 @@
+# frozen_string_literal: true
+
 require 'pry'
 
 def bubble_sort(array)
-    
-    n = array.length
-    for x in 0..n
-        for index in 0..n-1
-            #binding.pry
-            numberTemp = array[index]
-            nextTemp = array[index + 1]
-            if nextTemp != nil
-                if numberTemp > nextTemp
-                    array[index] = nextTemp
-                    array[index + 1] = numberTemp
-                end
-            end
-        end
+  n = array.length
+  (0..n).each do |_x|
+    (0..n - 1).each do |index|
+      # binding.pry
+      number_temp = array[index]
+      next_temp = array[index + 1]
+      if !next_temp.nil? && (number_temp > next_temp)
+        array[index] = next_temp
+        array[index + 1] = number_temp
+      end
     end
-            
-    p array
-
+  end
+  p array
 end
 
-
-
-
-
-bubble_sort([4,3,78,2,0,2])
+bubble_sort([4, 3, 78, 2, 0, 2])
